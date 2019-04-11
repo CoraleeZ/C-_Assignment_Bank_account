@@ -1,0 +1,10 @@
+@model Transaction
+<form asp-action="MakeTran" asp-controller="Home" method="post">
+    <div>
+    <span asp-validation-for="Amount" style="color:red;"></span>
+    </div>
+    Deposite/Withdral:<input type="text" asp-for="Amount">
+    <div>
+        <input type="submit" value="submit">
+    </div>
+</form>

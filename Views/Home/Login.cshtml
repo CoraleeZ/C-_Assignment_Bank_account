@@ -1,0 +1,21 @@
+@model ForLandR
+
+<center><h1>Login!</h1></center>
+<a href="/">Register</a>
+<form asp-action="Log_in" asp-controller="Home" method="post">
+
+    <div>
+    <span asp-validation-for="Email" style="color:red;"></span>
+    </div>
+    Email:<input type="text" asp-for="Email">
+    <br>
+
+    <div>
+    <span asp-validation-for="Password" style="color:red;"></span>
+    </div>
+    Password:<input type="text" asp-for="Password">
+    <br>
+
+
+    <input type="submit" value="Login!">
+</form>

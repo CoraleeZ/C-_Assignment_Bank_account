@@ -1,0 +1,40 @@
+@model Info
+
+<div><a href="logout">Log out!</a></div>
+<center><h1>Welcome @Model.Firstname!!</h1></center>
+<span>Current balance: <u>$ @Model.sum</u></span>
+<br>
+<br>
+<partial name="FormPartial" model="@Model.form"/>
+
+<center>
+        <table class="table table-striped col-sm-10 border">
+
+            <thead>
+                <tr>
+                    <th class='border-left border-right' scope="col-2">Amount</th>
+                    <th class='border-left border-right' scope="col-1">Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+              @{
+                  foreach(var x in Model.tran){
+
+                    <tr>
+                
+                        <td class='border-left border-right'> $ @x.Amount</td>
+                        <td class='border-left border-right'>@x.CreatedAt.ToString("MM/dd/yyyy")</td>
+
+                    </tr>
+
+                  }
+
+              }  
+
+            </tbody>
+
+        </table>
+    </center>
+
